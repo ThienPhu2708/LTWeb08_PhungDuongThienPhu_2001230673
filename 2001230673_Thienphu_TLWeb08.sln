@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QL_Employee", "QL_Employee\QL_Employee.csproj", "{34E8012C-AEF6-46EB-8B51-CB3F41D2CDCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTWeb08_QLBookstore", "LTWeb08_QLBookstore\LTWeb08_QLBookstore.csproj", "{A297000A-0323-4164-8108-A615751ECBA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34E8012C-AEF6-46EB-8B51-CB3F41D2CDCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E8012C-AEF6-46EB-8B51-CB3F41D2CDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E8012C-AEF6-46EB-8B51-CB3F41D2CDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E8012C-AEF6-46EB-8B51-CB3F41D2CDCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A297000A-0323-4164-8108-A615751ECBA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A297000A-0323-4164-8108-A615751ECBA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A297000A-0323-4164-8108-A615751ECBA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A297000A-0323-4164-8108-A615751ECBA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5763A34C-B784-413C-B896-18AE9FBD85AC}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<QL_Employee.Models.EMPLOYEE>
+
+@{
+    ViewBag.Title = "Nhân viên theo phòng ban";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center my-3">NHÂN VIÊN PHÒNG: @ViewBag.DeptName</h2>
+
+<div class="container mt-3">
+    <table class="table table-bordered table-hover">
+        <thead class="table-secondary">
+            <tr>
+                <th>Mã NV</th>
+                <th>Họ tên</th>
+                <th>Giới tính</th>
+                <th>Thành phố</th>
+                <th>Ảnh</th>
+                <th>Chi tiết</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in Model)
+            {
+                <tr>
+                    <td>@emp.ID</td>
+                    <td>@emp.NAME_EMP</td>
+                    <td>@emp.GENDER</td>
+                    <td>@emp.CITY</td>
+                    <td>
+                        <img src="@Url.Content("~/Content/Images/" + emp.IMAGES_EMP)"
+                             style="width:60px; height:auto;" class="img-thumbnail" />
+                    </td>
+                    <td>
+                        @Html.ActionLink("Xem", "Details", new { id = emp.ID }, new { @class = "btn btn-info btn-sm" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="mt-3">
+        @Html.ActionLink("Go back Department-List", "List_Dept", null, new { @class = "btn btn-secondary" })
+    </div>
+</div>

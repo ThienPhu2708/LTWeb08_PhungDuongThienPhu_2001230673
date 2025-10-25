@@ -1,0 +1,53 @@
+﻿@model QL_Employee.Models.EMPLOYEE
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>XÁC NHẬN THÔNG TIN NHÂN VIÊN CẦN XÓA</h2>
+
+<h3>Bạn quyết định xóa nhân viên này?</h3>
+
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+
+<div class="container border rounded p-4 bg-light shadow-sm">
+    <hr />
+        <div class="d-flex align-items-start">
+            <!-- Ảnh nhân viên -->
+            <div class="me-3" ">
+                <img src="@Url.Content("~/Content/Images/" + Model.IMAGES_EMP)"
+                     alt="Ảnh nhân viên"
+                     class="img-thumbnail"
+                     style="width:210px; height:auto;">
+                <div class="text-center">Mã số nhân viên: <strong>@Html.DisplayFor(model => model.ID)</strong></div>
+            </div>
+
+            <!-- Thông tin chi tiết -->
+            <div>
+                <p><strong>Họ và tên:</strong> @Html.DisplayFor(model => model.NAME_EMP)</p>
+                <p><strong>Giới tính:</strong> @Html.DisplayFor(model => model.GENDER)</p>
+                <p><strong>Thành phố:</strong> @Html.DisplayFor(model => model.CITY)</p>
+                <p><strong>Mã phòng ban:</strong> @Html.DisplayFor(model => model.DEPT_ID)</p>
+            </div>
+        </div>
+
+        <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

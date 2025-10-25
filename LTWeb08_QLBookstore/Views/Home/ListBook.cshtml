@@ -1,0 +1,70 @@
+﻿@model IEnumerable<LTWeb08_QLBookstore.Models.SACH>
+
+@{
+    ViewBag.Title = "ListBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>QUẢN LÍ THÔNG TIN SÁCH</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới sản phẩm", "Create_Book")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Tên sách
+        </th>
+        <th>
+            Giá bán
+        </th>
+        <th>
+            Mô tả
+        </th>
+        <th>
+            Hình ảnh
+        </th>
+        <th>
+            Ngày cập nhật
+        </th>
+        <th>
+            Mã chủ đề
+        </th>
+        <th>
+            Mã NXB
+        </th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENSACH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIABAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MOTA)
+            </td>
+            <td>
+                <img class="img-fluid" style="width:100px; height: 100px" src="@Url.Content("~/Content/Images/"+ item.ANHBIA)" alt="Hình sản phẩm" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYCAPNHAT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MACHUDE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MANXB)
+            </td>
+            <td>@Html.ActionLink("Chi tiết sách","Details_Book", new {id= item.MASACH})</td>
+        </tr>
+    }
+
+</table>
+
+

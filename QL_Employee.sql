@@ -1,0 +1,89 @@
+﻿CREATE DATABASE QL_EMPLOYEE
+
+USE QL_EMPLOYEE
+
+CREATE TABLE DEPARTMENT
+(
+	DEPT_ID VARCHAR (100) PRIMARY KEY,
+	NAME NVARCHAR (100),
+);
+
+CREATE TABLE EMPLOYEE
+(
+	ID VARCHAR (100) PRIMARY KEY,
+	NAME_EMP NVARCHAR (100),
+	GENDER NVARCHAR (5),
+	CITY NVARCHAR (100),
+	DEPT_ID VARCHAR (100),
+	FOREIGN KEY (DEPT_ID) REFERENCES DEPARTMENT (DEPT_ID),
+);
+
+INSERT INTO DEPARTMENT (DEPT_ID, NAME) VALUES
+('D001', N'Phòng Đào Tạo'),
+('D002', N'Phòng Công Tác Sinh Viên'),
+('D003', N'Phòng Tài Chính - Kế Toán'),
+('D004', N'Phòng Hành Chính - Nhân Sự'),
+('D005', N'Phòng Quản Trị Thiết Bị'),
+('D006', N'Phòng Khảo Thí & Đảm Bảo Chất Lượng'),
+('D007', N'Phòng Hợp Tác Quốc Tế');
+
+
+INSERT INTO EMPLOYEE (ID, NAME_EMP, GENDER, CITY, DEPT_ID) VALUES
+('E001', N'Nguyễn Văn An', N'Nam', N'Hà Nội', 'D001'),
+('E002', N'Trần Thị Bình', N'Nữ', N'Hà Nội', 'D002'),
+('E003', N'Lê Văn Cường', N'Nam', N'Đà Nẵng', 'D003'),
+('E004', N'Phạm Thị Dung', N'Nữ', N'Hồ Chí Minh', 'D004'),
+('E005', N'Hoàng Văn Đức', N'Nam', N'Huế', 'D005'),
+('E006', N'Vũ Thị Hoa', N'Nữ', N'Hải Phòng', 'D006'),
+('E007', N'Đinh Văn Khánh', N'Nam', N'Cần Thơ', 'D007');
+
+
+ALTER TABLE EMPLOYEE
+ADD IMAGES_EMP VARCHAR (100);
+
+
+UPDATE EMPLOYEE
+SET IMAGES_EMP = 'nv01.jpg'
+WHERE ID = 'E001'
+
+UPDATE EMPLOYEE
+SET IMAGES_EMP = 'nv02.jpg'
+WHERE ID = 'E002'
+
+UPDATE EMPLOYEE
+SET IMAGES_EMP = 'nv03.jpg'
+WHERE ID = 'E003'
+
+
+UPDATE EMPLOYEE
+SET IMAGES_EMP = 'nv04.jpg'
+WHERE ID = 'E004'
+
+
+UPDATE EMPLOYEE
+SET IMAGES_EMP = 'nv05.jpg'
+WHERE ID = 'E005'
+
+
+
+UPDATE EMPLOYEE
+SET IMAGES_EMP = 'nv06.jpg'
+WHERE ID = 'E006'
+
+
+UPDATE EMPLOYEE
+SET IMAGES_EMP = 'nv07.jpg'
+WHERE ID = 'E007'
+
+
+
+SELECT * FROM EMPLOYEE
+
+
+
+
+
+
+
+
+
